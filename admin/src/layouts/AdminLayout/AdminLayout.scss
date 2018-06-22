@@ -1,0 +1,46 @@
+.anticon-menu-fold, .anticon-menu-unfold {
+  margin-left: 15px;
+  cursor: pointer;
+  &:hover {
+    color: #e12e2d;
+  }
+}
+
+.nav-header {
+  .ant-dropdown-link {
+    float: right;
+    margin-right: 15px;
+  }
+}
+
+.logo {
+  height: 70px;
+  cursor: pointer;
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  span {
+    display: block;
+    color: #f0f0f0;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .icon-aixin {
+    color: #e12e2d;
+    font-size: 32px;
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: auto;
+  }
+}
+
+.ant-layout-sider-collapsed {
+  .logo {
+    span {
+      display: none;
+    }
+  }
+}

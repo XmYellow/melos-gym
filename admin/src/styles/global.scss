@@ -1,0 +1,17 @@
+.table-head {
+  display: flex;
+  h2 {
+    flex: 1;
+  }
+  .table-add {
+  }
+}
+
+.flex{
+  display: flex;
+}
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
