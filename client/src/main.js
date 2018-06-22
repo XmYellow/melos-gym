@@ -7,16 +7,21 @@ import './style/index.less'
 import store from './store'
 import vueg from 'vueg'
 
+import { Swipe, SwipeItem } from 'mint-ui'
+
+Vue.component(Swipe.name, Swipe)
+Vue.component(SwipeItem.name, SwipeItem)
+
 Vue.config.productionTip = false
 Vue.use(vueg, router)
 Vue.use(store)
 
 /* eslint-disable no-new */
 
-const v = new Vue({
+new Vue({
   el: '#app',
   router,
   template: '<App/>',
   components: {App}
 })
-console.log(v)
+

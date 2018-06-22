@@ -1,19 +1,18 @@
 <template>
   <div id="app">
-    <div class="header">
-      <router-link to="/home">home</router-link>
-      <router-link to="/login">login</router-link>
-      <router-link to="/share">share</router-link>
-    </div>
     <main>
       <router-view v-transition></router-view>
     </main>
+    <TabMenu/>
   </div>
 </template>
 
 <script>
+  import TabMenu from './components/TabMenu'
+
   export default {
-    name: 'app'
+    name: 'app',
+    components: {TabMenu}
   }
 </script>
 
@@ -25,18 +24,30 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
-  }
-  main{
-    width: 100%;
-    overflow: hidden;
-  }
-  .header{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background: salmon;
-    font-size: 20px;
+    font-size: 28px;
   }
 
+  main {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 100px;
+  }
+
+  .page {
+    position: relative;
+    background: #fff;
+    min-height: 100vh;
+    width: 750px;
+    margin: auto;
+    overflow: auto;
+  }
+  .clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
 </style>

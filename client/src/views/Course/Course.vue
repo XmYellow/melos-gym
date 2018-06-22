@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <h1>课程</h1>
+  <div class="page">
+    <div class="banner-top">
+      <img src="./../../assets/banner1.jpeg">
+    </div>
   </div>
 </template>
 
@@ -11,3 +13,11 @@
     name: 'Course'
   }
 </script>
+<style lang="less">
+  .banner-top {
+    img {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+</style>
