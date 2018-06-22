@@ -6,9 +6,9 @@ import 'amfe-flexible/index.min.js'
 import './style/index.less'
 import store from './store'
 import vueg from 'vueg'
+import { Swipe, SwipeItem,InfiniteScroll } from 'mint-ui'
 
-import { Swipe, SwipeItem } from 'mint-ui'
-
+Vue.use(InfiniteScroll)
 Vue.component(Swipe.name, Swipe)
 Vue.component(SwipeItem.name, SwipeItem)
 
