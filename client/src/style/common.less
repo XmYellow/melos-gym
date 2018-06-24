@@ -1,0 +1,52 @@
+.page {
+  position: relative;
+  background: #fff;
+  height: 100vh;
+  width: 750px;
+  margin: auto;
+  overflow: auto;
+  padding-bottom: 100px;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.user {
+  &-card {
+    overflow: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: #eee;
+    img {
+      float: left;
+      margin: 10px 30px 10px 20px;
+      width: 150px;
+      height: 150px;
+      border-radius: 150px;
+      border: 1px solid #0086b3;
+    }
+    .vip-btn {
+      font-size: 24px;
+      color: #df5000;
+    }
+  }
+
+  &-name {
+    padding-top: 20px;
+    font-size: 36px;
+  }
+}
+
+.mint-toast {
+  top: 30% !important;
+  .icon{
+    font-size: 80px;
+    color: #9b462c;
+  }
+}

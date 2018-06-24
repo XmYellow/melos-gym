@@ -3,7 +3,7 @@
     <Banner/>
     <div class="card">
       <div class="card-header">
-        健身小知识<span>全部 >> </span>
+        健身小知识<span @click="goToList">全部 >> </span>
       </div>
       <div class="card-body">
         <div class="scroll-y">
@@ -19,7 +19,7 @@
     </div>
     <div class="card">
       <div class="card-header">
-        健身饮食<span>全部 >> </span>
+        健身饮食<span @click="goToList">全部 >> </span>
       </div>
       <div class="card-body clearfix">
         <div class="article"></div>
@@ -41,7 +41,12 @@
 
   export default {
     name: 'Home',
-    components: {Banner}
+    components: {Banner},
+    methods: {
+      goToList () {
+        this.$router.push({path: '/teach'})
+      }
+    },
   }
 </script>
 <style lang="less">
@@ -71,14 +76,15 @@
       }
     }
   }
-  .article{
+
+  .article {
     position: relative;
     float: left;
     display: inline-block;
     width: 50%;
     height: 300px;
     padding: 10px;
-    &:after{
+    &:after {
       content: '';
       display: inline-block;
       width: 100%;

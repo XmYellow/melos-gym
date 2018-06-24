@@ -17,8 +17,9 @@
 </script>
 
 <style lang="less">
+  @import "./style/index";
   @import "~vueg/css/transition-min.css";
-
+  @import "./style/common";
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -31,23 +32,5 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    padding-bottom: 100px;
-  }
-
-  .page {
-    position: relative;
-    background: #fff;
-    min-height: 100vh;
-    width: 750px;
-    margin: auto;
-    overflow: auto;
-  }
-  .clearfix:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0;
   }
 </style>

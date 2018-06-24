@@ -33,7 +33,7 @@ module.exports = {
         test: /\.css$/,
         include: /node_modules/,
         exclude: /node_modules(?![\\/]mint-ui[\\/])/,
-        loader: 'style!css!postcss!less'
+        loader: 'style!css!less!postcss'
       },
       {
         test: /\.vue$/,

@@ -7,6 +7,10 @@ const Share = () => import(/* webpackChunkName: "share" */ './../views/Share')
 const Course = () => import(/* webpackChunkName: "course" */ './../views/Course')
 const Center = () => import(/* webpackChunkName: "center" */ './../views/Center')
 const Teach = () => import(/* webpackChunkName: "teach" */ './../views/List')
+const Vip = () => import(/* webpackChunkName: "vip" */ './../views/Vip')
+const AutoPay = () => import(/* webpackChunkName: "vip" */ './../views/AutoPay')
+
+
 Vue.use(Router)
 
 export default new Router({
@@ -40,6 +44,16 @@ export default new Router({
       path: '/teach',
       name: 'teach',
       component: Teach
+    },
+    {
+      path: '/vip',
+      name: 'vip',
+      component: Vip
+    },
+    {
+      path: '/auto-pay',
+      name: 'autoPay',
+      component: AutoPay
     }
 
   ]
