@@ -23,15 +23,15 @@ class LoginView extends React.Component {
     if (!isSubmit) return
     const user = this.state.user
     const params = {username: user.email.value, password: user.password.value}
-    const {status, msg} = await this.props.loginAsync(params)
-    this.setState({load: false})
-    if (!status) {
-      const {user} = this.state
-      user.password.status = 'error'
-      user.password.message = msg
-      this.setState(user)
-      return
-    }
+    // const {status, msg} = await this.props.loginAsync(params)
+    // this.setState({load: false})
+    // if (!status) {
+    //   const {user} = this.state
+    //   user.password.status = 'error'
+    //   user.password.message = msg
+    //   this.setState(user)
+    //   return
+    // }
     message.success('登入成功')
     browserHistory.push('/admin')
   }
@@ -53,7 +53,7 @@ class LoginView extends React.Component {
         this.setState({user})
         return false
       }
-      const result = api.get()
+      // const result = api.get()
       user.email.status = 'success'
       user.email.message = ''
     }
