@@ -7,18 +7,8 @@ app.use(compress())
 const dist = path.resolve('dist')
 app.use(express.static(dist))
 app.use('*', function (req, res, next) {
-  const filename = path.join(dist, 'index.html')
-
-  compiler.outputFileSystem.readFile(filename, (err, result) => {
-    if (err) {
-      return next(err)
-    }
-    res.set('content-type', 'text/html')
-    res.send(result)
-    res.end()
-  })
+  res.send(path.join(dist, 'index.html'))
 })
-
 app.listen(3000, () => {
   console.log('client Server is running at http://localhost:3000')
 })

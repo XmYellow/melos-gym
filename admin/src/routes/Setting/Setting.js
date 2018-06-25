@@ -19,7 +19,7 @@ class Setting extends React.Component {
     return (
       <div className="setting">
         <h2>设置 <Icon type="setting"/></h2>
-        <Form onSubmit={this.handleSubmit} className="login-form">
+        <Form onSubmit={this.handleSubmit} className="setting-form">
           <FormItem>
             {getFieldDecorator('oldPassword', {
               rules: [{required: true, message: '请输入原始密码'}],
