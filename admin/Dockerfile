@@ -1,6 +1,6 @@
 FROM node:10
 COPY / /admin
 WORKDIR /admin
-RUN npm install -g cnpm --registry=https://registry.npm.taobao.org && cnpm i -D node-sass && cnpm i && npm run build
+RUN npm install -g cnpm --registry=https://registry.npm.taobao.org && cnpm i && npm run build
 EXPOSE 4000
 CMD  npm run server
