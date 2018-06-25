@@ -1,7 +1,12 @@
 version: '3.0'
 services:
-  web:
-    build: .
+  client:
+    build: client
+    restart: on-failure
     ports:
-    - 3000:3000
-    - 4000:4000
+      - 3000:3000
+  admin:
+    build: admin
+    restart: on-failure
+    ports:
+      - 4000:4000
