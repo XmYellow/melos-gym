@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import { getUsers,addUser } from './../modules/UserModule'
-import UserView from './../components/UserView'
+import { getUsers,addUser } from '../modules/UserModule'
+import UserView from '../components/UserView'
 
 const mapDispatchToProps = {
   getUsers,

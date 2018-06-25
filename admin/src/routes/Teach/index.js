@@ -1,14 +1,14 @@
 // import { injectReducer } from './../../../store/reducers'
-import PriceView from './Price'
+import TeachView from './components/TeachView'
 
 export default (store) => ({
-  path: 'price',
+  path: 'teach',
   getComponent (nextState, cb) {
     require.ensure([], (require) => {
       // const Counter = require('./containers/CounterContainer').default
       // const reducer = require('./modules/counter').default
       // injectReducer(store, {key: 'counter', reducer})
-      cb(null, PriceView)
+      cb(null, TeachView)
     }, 'admin')
   }
 })

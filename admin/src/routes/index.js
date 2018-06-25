@@ -9,14 +9,17 @@ import NotLayout from './../layouts/NotLayout/NotLayout'
 
 // public page
 import CounterRoute from './Counter'
-import Home from './Home'
 import Login from './Login'
 
 // admin
-import AdminHome from './Admin/Home'
-import AdminUser from './Admin/User'
-import AdminRole from './Admin/Role'
-import NotFound from './Admin/NotFound'
+import AdminHome from './Home'
+import AdminUser from './User'
+import AdminRole from './Article'
+import AdminCourse from './Course'
+import AdminTeach from './Teach'
+import AdminPrice from './Price'
+import AdminSetting from './Setting'
+import NotFound from './NotFound'
 
 export const createRoutes = (store) => {
   return [
@@ -37,6 +40,10 @@ export const createRoutes = (store) => {
         AdminUser(store),
         AdminRole(store),
         CounterRoute(store),
+        AdminCourse(store),
+        AdminTeach(store),
+        AdminPrice(store),
+        AdminSetting(store),
         NotFound()
       ]
     },

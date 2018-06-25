@@ -1,19 +1,21 @@
 // rcd +回车
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Modal, Button, Form, Input, Icon, message } from 'antd'
+import { Modal, Button, Form, Input, Icon, message, DatePicker } from 'antd'
+
+const {RangePicker} = DatePicker
 
 const FormItem = Form.Item
 let timer = null
-const resetUser = {
+const resetCourse = {
   username: {value: '', status: '', msg: '', required: true},
   phone: {value: '', status: '', msg: '', required: true},
   email: {value: '', status: '', msg: '', required: true},
   password: {value: '', status: '', msg: '', required: true},
 }
 
-class UserModal extends React.Component {
-  state = {user: {...resetUser}}
+class CourseModal extends React.Component {
+  state = {user: {...resetCourse}}
   // 渲染icon
   renderIcon = type => (<Icon type={type} style={{color: 'rgba(0,0,0,.25)'}}/>)
   // 提交
@@ -31,7 +33,7 @@ class UserModal extends React.Component {
     await this.props.addUser(newUser).catch(err => { throw err })
     this.props.handleOk()
     message.success('添加用户成功')
-    this.setState({user: {...resetUser}})
+    this.setState({user: {...resetCourse}})
   }
 
   // check api
@@ -73,13 +75,24 @@ class UserModal extends React.Component {
       this.setState(user)
     }, 400)
   }
+  handleSelectChange = (select) => {
+    console.log(select)
+  }
+  onDateChange = (value, dateString) => {
+    console.log('Selected Time: ', value)
+    console.log('Formatted Selected Time: ', dateString)
+  }
+
+  onOk = (value) => {
+    console.log('onOk: ', value)
+  }
 
   render () {
-    const {handleSubmit, onChange, renderIcon} = this
+    const {handleSubmit, onChange, renderIcon, onDateChange, onOk} = this
     const {handleCancel, loading, visible} = this.props
     const {email, username, phone, password} = this.state.user
-    const footer = [<Button key="back" onClick={handleCancel}>取消</Button>,
-      <Button key="submit" type="primary" loading={loading} onClick={handleSubmit}>添加新用户</Button>]
+    const footer = [<Button size='large' key="back" onClick={handleCancel}>取消</Button>,
+      <Button size='large' key="submit" type="primary" loading={loading} onClick={handleSubmit}>添加新文章</Button>]
     const formItemLayout = {
       labelCol: {xs: {span: 24}, sm: {span: 4},},
       wrapperCol: {xs: {span: 24}, sm: {span: 20},},
@@ -91,38 +104,39 @@ class UserModal extends React.Component {
              footer={footer}>
         <div className="form-box flex-center">
           <Form className="user-modal__form">
-            <FormItem  {...formItemLayout} label="账号" hasFeedback required
+            <FormItem  {...formItemLayout} label="标题" hasFeedback required
                        validateStatus={username.status} help={username.msg}>
-              <Input prefix={renderIcon('user')} onChange={e => {onChange(e, 'username')}}
-                     placeholder="用户名" value={username.value}/>
+              <Input size='large' prefix={renderIcon('user')} onChange={e => {onChange(e, 'username')}}
+                     placeholder="请输入标题" value={username.value}/>
             </FormItem>
-            <FormItem  {...formItemLayout} label="邮箱" hasFeedback required
+            <FormItem  {...formItemLayout} label="文章地址" hasFeedback required
                        validateStatus={email.status} help={email.msg}>
-              <Input prefix={renderIcon('paper-clip')} onChange={e => {onChange(e, 'email')}}
-                     placeholder="邮箱" value={email.value}/>
+              <Input size='large' prefix={renderIcon('paper-clip')} onChange={e => {onChange(e, 'email')}}
+                     placeholder="文章地址" value={email.value}/>
             </FormItem>
-            <FormItem  {...formItemLayout} label="手机" hasFeedback required
-                       validateStatus={phone.status} help={phone.msg}>
-              <Input prefix={renderIcon('phone')} onChange={e => {onChange(e, 'phone')}}
-                     placeholder="手机" value={phone.value}/>
+            <FormItem  {...formItemLayout} label="起止时间" hasFeedback required
+                       validateStatus={email.status} help={email.msg}>
+              <DatePicker
+                showTime size='large'
+                format="YYYY-MM-DD HH:mm:ss"
+                placeholder="Select Time"
+                onChange={onDateChange}
+                onOk={onOk}
+              />
             </FormItem>
-            <FormItem  {...formItemLayout} label="密码" hasFeedback required
-                       validateStatus={password.status} help={password.msg}>
-              <Input type="password" prefix={renderIcon('lock')} onChange={e => {onChange(e, 'password')}}
-                     placeholder="密码" value={password.value}/>
-            </FormItem>
+
+
           </Form>
         </div>
-
       </Modal>
     )
   }
 }
 
-UserModal.propTypes = {
+CourseModal.propTypes = {
   handleCancel: PropTypes.func.isRequired,
   handleOk: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
   visible: PropTypes.bool.isRequired
 }
-export default Form.create()(UserModal)
+export default Form.create()(CourseModal)

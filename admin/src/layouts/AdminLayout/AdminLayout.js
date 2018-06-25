@@ -34,11 +34,8 @@ class AdminLayout extends React.Component {
     const {menuClick, menuClickItem} = this
     const menu = (
       <Menu onClick={ menuClickItem }>
-        <Menu.Item key="/admin/center">
+        <Menu.Item key="/admin/setting">
           <a>个人中心</a>
-        </Menu.Item>
-         <Menu.Item key="/">
-          <a>返回首页</a>
         </Menu.Item>
         <Menu.Divider/>
         <Menu.Item key="/admin/layout">退出</Menu.Item>
@@ -66,12 +63,21 @@ class AdminLayout extends React.Component {
             </Menu.Item>
             <Menu.Item key="role">
               <Icon type="video-camera"/>
-              <span>文章管理</span>
+              <span>首页管理</span>
             </Menu.Item>
             <Menu.Item key="course">
               <Icon type="video-camera"/>
               <span>课程管理</span>
             </Menu.Item>
+            <Menu.Item key="teach">
+              <Icon type="video-camera"/>
+              <span>私教管理</span>
+            </Menu.Item>
+            <Menu.Item key="price">
+              <Icon type="video-camera"/>
+              <span>套餐管理</span>
+            </Menu.Item>
+
             <Menu.Item key="setting">
               <Icon type="upload"/>
               <span>设置</span>
