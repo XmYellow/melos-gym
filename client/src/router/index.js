@@ -6,7 +6,7 @@ const Login = () => import(/* webpackChunkName: "login" */ './../views/Login')
 const Share = () => import(/* webpackChunkName: "share" */ './../views/Share')
 const Course = () => import(/* webpackChunkName: "course" */ './../views/Course')
 const Center = () => import(/* webpackChunkName: "center" */ './../views/Center')
-const Teach = () => import(/* webpackChunkName: "teach" */ './../views/List')
+const Teach = () => import(/* webpackChunkName: "teach" */ './../views/Teach')
 const Vip = () => import(/* webpackChunkName: "vip" */ './../views/Vip')
 const AutoPay = () => import(/* webpackChunkName: "vip" */ './../views/AutoPay')
 

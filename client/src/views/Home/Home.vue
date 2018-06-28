@@ -1,35 +1,31 @@
 <template>
   <div class="home page">
-    <Banner/>
+    <img class="home-banner" src="./asserts/banner.jpg">
     <div class="card">
-      <div class="card-header">
-        健身小知识<span @click="goToList">全部 >> </span>
-      </div>
+      <MyTitle title="健身饮食专区"></MyTitle>
       <div class="card-body">
         <div class="scroll-y">
-          <div class="scroll-y__body" style="width: 1000px;">
-            <div class="item">1</div>
-            <div class="item">1</div>
-            <div class="item">1</div>
-            <div class="item">1</div>
-            <div class="item">1</div>
+          <div class="scroll-y__body">
+            <div class="item zhishi" v-for="i in 10" :key="'art'+i">
+              <img src="./asserts/art.jpg">
+              <div class="title">力与美的平衡</div>
+              <div class="desc">这是一个小说明这是一个小说明这是一个小说明这是一个小说明</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="card">
-      <div class="card-header">
-        健身饮食<span @click="goToList">全部 >> </span>
-      </div>
-      <div class="card-body clearfix">
-        <div class="article"></div>
-        <div class="article"></div>
-        <div class="article"></div>
-        <div class="article"></div>
-        <div class="article"></div>
-        <div class="article"></div>
-        <div class="article"></div>
-        <div class="article"></div>
+      <MyTitle title="健身饮食专区"></MyTitle>
+      <div class="card-body">
+        <div class="scroll-y">
+          <div class="scroll-y__body">
+            <div class="item yinshi" v-for="i in 10" :key="'art'+i">
+              <img src="./asserts/yinshi.jpg">
+              <div class="title">力与美的平衡力与美的平衡</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -51,29 +47,79 @@
 </script>
 <style lang="less">
   .card {
-    &-header {
-      padding: 0 20px;
-      height: 90px;
-      line-height: 90px;
-      span {
-        float: right;
-      }
+    background: #fff;
+    &:not(:last-child) {
+      margin-bottom: 10px;
     }
   }
 
   .scroll-y {
-    height: 280px;
     width: 100%;
     overflow-y: hidden;
     overflow-x: scroll;
     &__body {
+      display: flex;
       .item {
-        display: inline-block;
-        width: 320px;
-        height: 250px;
-        margin: auto 10px;
-        background: #55a532;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        &.zhishi {
+          width: 500px;
+          height: 440px;
+          margin: auto 28px;
+          img {
+            width: 500px;
+            height: 300px;
+          }
+        }
+        &.yinshi {
+          width: 266px;
+          height: 380px;
+          margin: auto 10px;
+          &:first-child {
+            margin-left: 28px;
+          }
+          img {
+            width: 266px;
+            height: 270px;
+          }
+        }
       }
+      img {
+        display: block;
+        box-shadow: 0 3px 10px rgba(0, 2px, 0, 0.35);
+        margin-bottom: 10px;
+      }
+      .title {
+        font-size: 32px;
+        font-weight: bolder;
+        color: #333;
+        text-align: left;
+        padding-left: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .desc {
+        color: #999;
+        font-size: 24px;
+        padding-left: 10px;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .home {
+    &-banner {
+      display: block;
+      width: 750px;
+      height: 350px;
+      margin-bottom: 10px;
     }
   }
 
