@@ -36,6 +36,7 @@
     & .arrow {
       position: absolute;
       right: 50px;
+      top: 34px;
       display: block;
       width: 18px;
     }

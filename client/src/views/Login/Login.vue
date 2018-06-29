@@ -41,7 +41,7 @@
     }
     &-form {
       position: absolute;
-      top: 600px;
+      top: 500px;
       left: 0;
       right: 0;
       margin: auto;
