@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <main>
-      <router-view v-transition></router-view>
+      <router-view></router-view>
     </main>
     <TabMenu/>
   </div>
