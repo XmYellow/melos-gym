@@ -143,6 +143,7 @@
         }
       }
       .course-day__title {
+        margin-top: 20px;
         width: 200px;
         font-size: 32px;
         font-weight: bolder;
