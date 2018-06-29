@@ -20,6 +20,7 @@
   @import "./style/index";
   @import "~vueg/css/transition-min.css";
   @import "./style/common";
+
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;

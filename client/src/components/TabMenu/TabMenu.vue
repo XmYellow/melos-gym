@@ -20,7 +20,7 @@
         </router-link>
       </div>
       <div class="tab-menu__item">
-        <router-link to="/center">
+        <router-link to="/login">
           <i class="icon icon-shouye2"></i>
           我的
         </router-link>
