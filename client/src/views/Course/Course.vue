@@ -106,7 +106,7 @@
         width: 692px;
         height: 320px;
         border-radius: 5px;
-        margin-bottom: 20px;
+        margin: 0 auto 20px auto;
         overflow: hidden;
         box-shadow: 0 2px 10px rgba(0, 0, 0, .35);
       }
@@ -120,6 +120,10 @@
         top: 0;
         bottom: 0;
         right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         margin: auto;
         width: 380px;
         height: 96px;
@@ -140,7 +144,6 @@
       }
       .course-day__title {
         width: 200px;
-        margin: auto;
         font-size: 32px;
         font-weight: bolder;
         overflow: hidden;
