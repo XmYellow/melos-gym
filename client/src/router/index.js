@@ -14,11 +14,10 @@ const Vip = () => import(/* webpackChunkName: "vip" */ './../views/Vip')
 const AutoPay = () => import(/* webpackChunkName: "vip" */ './../views/AutoPay')
 
 Vue.use(Router)
-
-export default new Router({
+const routes = new Router({
   routes: [
     {
-      path: '/',
+      path: '/home',
       name: 'home',
       component: Home
     },
@@ -67,6 +66,13 @@ export default new Router({
       name: '404',
       component: NotFound
     }
-
   ]
 })
+routes.beforeEach((to, from, next) => {
+  if (to.path === '/') {
+    next('/home')
+  }
+  next()
+})
+
+export default routes

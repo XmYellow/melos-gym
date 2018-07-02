@@ -19,7 +19,7 @@
     <div class="center-sign">
       <div class="center-animate"></div>
       <div class="center-sign__btn" :class="{'active': isSign}" @click="signHandle">
-        {{isSign?'完成打卡':'打卡'}}
+        {{isSign?'已打卡':'打卡'}}
       </div>
       <span class="center-sign__txt">累计打卡2天</span>
     </div>

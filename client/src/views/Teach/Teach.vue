@@ -60,7 +60,7 @@
         margin: 0;
       }
       &__title {
-        margin-top: 15px;
+        margin-top: 5px;
         font-size: 32px;
         font-weight: bolder;
         width: 100%;

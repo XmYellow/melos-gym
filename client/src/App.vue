@@ -27,7 +27,7 @@
     -moz-osx-font-smoothing: grayscale;
     color: #333333;
     font-size: 28px;
-    background: #d8d8d9;
+    background: #F3F3F3;
   }
 
   main {
