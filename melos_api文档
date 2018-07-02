@@ -1,0 +1,238 @@
+1、
+描述：注册
+方法：post
+路由:/user/register
+头部:无
+参数:
+{   
+    "username":"xxxx",//不支持中文
+	"mobile":8613888888888,
+	"verificationCode":123456
+}
+返回:
+{
+	"code":0,
+	"msg":"success"
+}
+
+2、
+描述：发送验证短信
+方法：post
+路由:/message/send
+头部:无
+参数:
+{   
+    "type":1, //1注册使用,2绑定手机,3重置密码
+	"mobile":8613888888888
+}
+返回:
+{
+	"code":0,
+	"msg":"success"
+}
+
+3、
+描述：用户名/手机登录
+方法：post
+路由:/user/login
+头部:无
+参数:
+{   
+    "identifier":"xxxxx", //用户名或者手机号
+	"credential":"xxxx"//密码等
+}
+返回:
+{
+	"code":0,
+	"msg":"success",
+	"token":"xxxxxx"
+}
+
+4、
+描述：微信登录_获取authCodeURL(简单来说请求这个会返回一个url给你然后你请求这个url,会弹出一个授权然后用户确认时候会返回一个code,然后用这个code请求接口5。详细请看微信api：https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421140842)
+方法：post
+路由:/wechat/authCodeUrl
+头部:无
+参数:
+{   
+    "redirectURI":"xxxxx", //重定向的url
+	"scope":"snsapi_userinfo",
+	"state":"STATE"
+}
+返回:
+{
+	"code":0,
+	"msg":"success",
+	"authCodeUrl":"xxxxxx"
+}
+
+5、
+描述：微信登录_获取token
+方法：post
+路由:/wechat/exchangeTokenUrl
+头部:无
+参数:
+{   
+    "code":"xxxxx"//接口4url访问返回的code
+}
+返回:
+{
+	"code":0,
+	"msg":"success",
+	"token":"xxxxxx"
+}
+
+6、
+描述：获取用户信息
+方法：get
+头部:"token":"xxxxx"
+路由:/user/info
+参数:无
+返回:
+{
+	"code":0,
+	"msg":"success",
+	"user":{
+		"id":1,
+		"username":"xxx",
+		"nickname":"健身小白",//用于展示
+        "sex":0,/1男性，2女性，0未知
+        "email":"xxx",
+        "mobile":8613888888888,
+        "status":0,//0正常,
+        "headImage":"base64",//用户头像
+        "role":[{
+        	"id":2,
+        	"name":"厦门店会员",
+        	"createdAt":12334556,/创建时间unix时间戳(秒)
+        	"exp":123455666//到期时间unix时间戳(秒),
+        }],
+        "isMobileBind":true,
+        "isWechatBind":false,
+        "punchDays":11,打卡天数
+        "initialWeight":11,//初始体重Kg
+        "latestWeight":11,//最新体重kg
+        "targetWeight":11,//目标体重
+        "skeletalMuscle":"xx",//骨骼肌
+        "bodyFat":"xx",//体脂肪
+        "bodyFatRate":0.11,//体脂率
+        "BMI":20.1,//BMI,
+        "waistArmRate":0.11,//腰臂比
+        "basalMetabolism":"",//基础代谢
+        "visceralLevel":6.0//内脏等级
+	}
+}
+
+7、
+描述：编辑用户信息(全部参数都是可选,有传则修改)
+方法：put
+头部:"token":"xxxxx"
+路由:/user/info
+参数:{
+		"nickname":"健身小白",//用于展示
+        "sex":0,//1男性，2女性，0未知
+        "headImage":"base64",//用户头像
+        "initialWeight":11,//初始体重Kg
+        "latestWeight":11,//最新体重kg
+        "targetWeight":11,//目标体重
+        "skeletalMuscle":"xx",//骨骼肌
+        "bodyFat":"xx",//体脂肪
+        "bodyFatRate":0.11,//体脂率
+        "BMI":20.1,//BMI,
+        "waistArmRate":0.11,//腰臂比
+        "basalMetabolism":"",//基础代谢
+        "visceralLevel":6.0//内脏等级
+	}
+返回:
+{
+	"code":0,
+	"msg":"success"
+}
+
+8、
+描述：绑定手机
+方法：post
+路由:/mobile/bind
+头部:token:"xxx"
+参数:
+{   
+	"mobile":8613888888888,
+	"verificationCode":123456
+}
+返回:
+{
+	"code":0,
+	"msg":"success"
+}
+
+9、
+描述：取消绑定手机
+方法：post
+路由:/mobile/cancel
+头部:token:"xxx"
+参数:无
+返回:
+{
+	"code":0,
+	"msg":"success"
+}
+
+10、
+描述：绑定微信
+方法：post
+路由:/wechat/bind
+头部:token:"xxx"
+参数:
+{   
+	"code":"xxx",接口4url访问返回的code
+	"verificationCode":123456
+}
+返回:
+{
+	"code":0,
+	"msg":"success"
+}
+
+11、
+描述：取消微信绑定
+方法：post
+路由:/wechat/cancel
+头部:token:"xxx"
+参数:无
+返回:
+{
+	"code":0,
+	"msg":"success"
+}
+
+11、
+描述：获取vip套餐
+方法：post
+路由:/user/vip/package
+头部:token:"xxx"
+参数:无
+返回:
+{
+	"code":0,
+	"msg":"success",
+	"package":[{
+		"id":1,
+		"title":"",
+		"body":"",
+		"totalFee":100,//单位为分
+		"type":"month"//month year
+	}]
+}
+
+12、
+描述：打卡
+方法：post
+路由:/user/punch
+头部:token:"xxx"
+参数:无
+返回:
+{
+	"code":0,
+	"msg":"success",
+	"punchDays":11
+}
