@@ -8,5 +8,5 @@ cd melos-gym
 docker-compose up
 ```
 
-后台管理系统：http://localhost:4000   
-微信程序：http://localhost:3000
+后台管理系统：http://localhost:14000   
+微信程序：http://localhost:13000

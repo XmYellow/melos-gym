@@ -4,9 +4,9 @@ services:
     build: client
     restart: on-failure
     ports:
-      - 3000:3000
+      - 13000:3000
   admin:
     build: admin
     restart: on-failure
     ports:
-      - 4000:4000
+      - 14000:4000
