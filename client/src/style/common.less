@@ -20,27 +20,67 @@
 .user {
   &-card {
     overflow: auto;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    background: #eee;
-    img {
-      float: left;
-      margin: 10px 30px 10px 20px;
-      width: 150px;
-      height: 150px;
-      border-radius: 150px;
-      border: 1px solid #0086b3;
-    }
-    .vip-btn {
-      font-size: 24px;
-      color: #df5000;
-    }
-  }
+    height: 218px;
+    background-image: url("./../../static/img/header_bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
 
-  &-name {
-    padding-top: 20px;
-    font-size: 36px;
+    .vip-btn {
+      font-size: 26px;
+      margin-bottom: 14px;
+      color: #D6D6D6;
+    }
   }
+  &-img {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    margin-left: 36px;
+    margin-right: 36px;
+  }
+  &-name {
+    flex: 1;
+    .name {
+      color: #fff;
+      font-size: 32px;
+      font-weight: bolder;
+    }
+  }
+  &-edit {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+  }
+  &-phone {
+    float: right;
+    margin-right: 36px;
+    img {
+      display: inline-block;
+      width: 20px;
+      height: 32px;
+      margin-right: 10px;
+    }
+    span {
+      display: inline-block;
+      margin-left: 10px;
+      text-decoration: underline;
+    }
+  }
+}
+
+.arrow-icon {
+  position: absolute;
+  right: 28px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 18px;
+  height: 28px;
+  background: url("./../../static/img/ar.png");
+  background-size: cover;
 }
 
 .mint-toast {

@@ -7,7 +7,7 @@
     </template>
     <template v-if="type === 'text'">
       <input class="my-input__input" :type="type" v-model="value" :placeholder="placeholder">
-      <img class="my-input__icon" src="./assert/phone.jpg">
+      <img class="my-input__icon" src="./assert/phone.png">
       <span v-show="showClear" class="my-input__close" @click="() => {value = ''}">X</span>
     </template>
     <template v-if="type === 'code'">

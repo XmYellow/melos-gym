@@ -6,13 +6,15 @@ import 'amfe-flexible/index.min.js'
 import store from './store'
 // import vueg from 'vueg'
 import VueQrcode from '@xkeshi/vue-qrcode'
-import { Toast, Button, Switch, InfiniteScroll } from 'mint-ui'
+import { Toast, Button, Switch, InfiniteScroll, Radio } from 'mint-ui'
 import MyTitle from './components/MyTitle'
 import NotData from './components/NotData'
+
 Vue.use(InfiniteScroll)
 Vue.component(Switch.name, Switch)
 Vue.component(Button.name, Button)
 Vue.component(VueQrcode.name, VueQrcode)
+Vue.component(Radio.name, Radio)
 Vue.use(MyTitle)
 Vue.use(NotData)
 Vue.config.productionTip = false

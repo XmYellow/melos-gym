@@ -1,10 +1,17 @@
 <template>
   <div class="vip page">
     <div class="user-card">
-      <img src="./../../assets/article1.jpeg">
+      <img class="user-img" src="./assert/head.png">
       <div class="user-name">
         <div class="name">hello, 超人</div>
-        <div class="vip-btn">超级vip</div>
+        <div class="vip-btn">
+          普通会员
+        </div>
+      </div>
+    </div>
+    <div class="vip-radio">
+      选择门店：
+      <div class="vip-radio__box">
       </div>
     </div>
     <SelectCard @selectHandle="selectHandle"/>
@@ -30,12 +37,18 @@
     data () {
       return {
         autoPay: true,
-        select: 1
+        select: 1,
+        radio: 'optionA',
+        checked: [true, false]
       }
     },
     methods: {
       selectHandle (select) {
         console.log(select)
+      },
+      radioHandle (i) {
+        this.checked = [false, false]
+        this.checked[i] = true
       }
     }
   }
@@ -64,6 +77,13 @@
         color: #0086b3;
         padding: 20px 0;
       }
+    }
+    &-radio {
+      display: flex;
+      background: #fff;
+      height: 100px;
+      align-items: center;
+      padding: 0 28px;
     }
   }
 </style>
